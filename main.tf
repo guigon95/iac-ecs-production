@@ -9,7 +9,7 @@ resource "aws_ecs_task_definition" "ecs_task_def" {
  [
    {
      "name": "${var.cluster_task}",
-     "image": "${aws_ecr_repository.registro-ponto.repository_url}:latest",
+     "image": "${aws_ecr_repository.production.repository_url}:latest",
      "environment": [
      {
         "name": "aws.key",
