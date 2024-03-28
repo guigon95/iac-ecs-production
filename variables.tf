@@ -27,7 +27,7 @@ variable "container_port" {
 }
 
 variable "image_url" {
-  default = "860076335049.dkr.ecr.us-east-2.amazonaws.com/production:latest"
+  type    = string
 }
 
 variable "memory" {
@@ -39,12 +39,12 @@ variable "cpu" {
 }
 
 variable "cluster_name" {
-  default = "production-cluster"
+  type    = string
 }
 
 variable "cluster_task" {
-  default = "production-task"
+  type    = string
 }
 variable "cluster_service" {
-  default = "production-service"
+  type    = string
 }
