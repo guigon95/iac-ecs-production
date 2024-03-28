@@ -43,16 +43,3 @@ output "apigw_endpoint" {
   value = aws_apigatewayv2_api.apigw_http_endpoint.api_endpoint
   description = "API Gateway Endpoint"
 }
-
-
-resource "aws_apigatewayv2_authorizer" "auth" {
- api_id           = aws_apigatewayv2_api.apigw_http_endpoint.id
- authorizer_type = "JWT"
- identity_sources = ["$request.header.Authorization"]
- name             = "cognito-authorizer"
-
- jwt_configuration {
-    audience = [aws_cognito_user_pool_client.client.id]
-    issuer   = "https://${aws_cognito_user_pool.pool.endpoint}"
- }
-}
