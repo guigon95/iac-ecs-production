@@ -10,7 +10,7 @@ resource "aws_lb" "ecs_alb" {
 
 # Create the ALB target group for ECS.
 resource "aws_lb_target_group" "alb_ecs_tg" {
- name        = "ALB-TG"
+ name        = "ALB-TG-production"
  port        = 80
  protocol    = "HTTP"
  target_type = "ip"
