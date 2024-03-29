@@ -4,7 +4,7 @@ on:
 
 jobs:
 
-  terraform_destroy:
+  tf_destroy:
     needs: go-build
     runs-on: ubuntu-latest
     steps:
